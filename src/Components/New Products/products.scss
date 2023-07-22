@@ -1,0 +1,72 @@
+@import '../../vars.scss';
+
+.newProducts {
+    padding-bottom: 3rem;
+    background-color: $black;
+
+    & .section__title {
+        color: $white;
+    }
+
+    @media (max-width: 551px) {
+        padding-bottom: 1rem;
+    }
+}
+
+.newProducts__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.newProducts__inner--item {
+    flex-basis: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid $white;
+    border-radius: 3px;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: all .2s linear;
+    text-decoration: none;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    @media (max-width: 767px) {
+        flex-basis: 49%;
+    }
+}
+
+.newProducts__inner--item--image {
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+
+    img {
+        max-width: 70%;
+        height: auto;
+    }
+
+    @media (max-width: 551px) {
+        padding: 0;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.newProducts__inner--item--description {
+    width: 100%;
+    background-color: $black;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    color: $white;
+}

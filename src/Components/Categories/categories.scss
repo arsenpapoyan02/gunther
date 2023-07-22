@@ -1,0 +1,123 @@
+@import '../../vars.scss';
+
+section {
+    padding-bottom: 5rem;
+
+    @media (max-width: 767px) {
+        padding-bottom: 2rem;
+    }
+
+    @media (max-width: 551px) {
+        padding-bottom: 1rem;
+    }
+}
+
+.categories__grid--item {
+    background-color: $black;
+    border-radius: 3px;
+    color: #fff;
+    padding: 2rem 0 0 2rem;
+    cursor: pointer;
+    transition: all .2s linear;
+    text-decoration: none;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    @media (max-width: 767px) {
+        flex-basis: 49%;
+        height: 30rem;
+    } 
+
+    @media (max-width: 551px) {
+        flex-basis: 100%;
+    }
+}
+
+.categories__grid--item--title {
+    font-size: 1.5rem;
+    color: $white;
+}
+
+.categories__inner--grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 50px 50px 150px 100px 150px;
+
+    @media (max-width: 767px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 551px) {
+        grid-gap: 5px;
+    }
+}
+
+.item1 {
+    background: url('./3.png') no-repeat center / contain, $black;
+}
+
+.item2 {
+    background: url('./2.png') no-repeat center / contain, $black;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+}
+
+.item3 {
+    background: url('./1.png') no-repeat center / contain, $black;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 3;
+}
+
+.item4 {
+    background: url('./4.png') no-repeat center / contain, $black;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 1;
+}
+
+.item5 {
+    background: url('./5.png') no-repeat center / contain, $black;
+    grid-row-start: 3;
+    grid-row-end: 7;
+    grid-column-start: 2;
+}
+
+.item6 {
+    background: url('./6.png') no-repeat center / contain, $black;
+    grid-row-start: 4;
+    grid-row-end: 7;
+    grid-column-start: 3;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.item7 {
+    background: url('./7.png') no-repeat center / contain, $black;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    grid-column-start: 1;
+}
+
+.section__title {
+    font-size: 2.3rem;
+    color: $black;
+    text-align: center;
+    padding: 3rem 0 4rem;
+
+    @media (max-width: 767px) {
+        padding: 2rem 0;
+    }
+}

@@ -1,0 +1,262 @@
+@import '../../vars.scss';
+
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: $white;
+
+    &.fixed {
+        position: fixed;
+
+        .header__inner {
+            padding: .5rem 0;
+        }
+    }
+}
+
+.header__inner {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 0;
+}
+
+.logo {
+    width: 10rem;
+    height: auto;
+    
+    @media (max-width: 551px) {
+        width: 8rem;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 991px) {
+        display: none;
+    }
+}
+
+.nav__link {
+    font-size: $defSize;
+    color: $black;
+    text-decoration: none;
+    margin-left: 2.8rem;
+    list-style-type: none;
+    cursor: pointer;
+    transition: all .1s linear;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:hover {
+        color: $red;
+    }
+}
+
+.header__search {
+    width: 25rem;
+    background-color: $black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin-left: -8rem;
+    position: relative;
+
+    label {
+        display: none;
+        color: $red;
+    }
+
+    &.notFound { 
+        input {
+            width: 60%;
+        }
+
+        img {
+            margin-left: 0;
+        }
+
+        label {
+            display: block;
+        }
+    }
+
+    & .disabled {
+        pointer-events: none;
+    }
+
+    @media (max-width: 991px) {
+        display: none;
+    }
+}
+
+.header__search--input {
+    width: 100%;
+    background: 0;
+    border: 0;
+    padding: 0;
+
+    color: rgba($color: #FFF, $alpha: .5);
+
+    &::placeholder {
+        font-size: $defSize;
+        color: rgba($color: #FFF, $alpha: .5);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.header__search--img {
+    filter: brightness(0) invert(1);
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+
+// burger
+
+.burger {
+    display: none;
+    width: 3rem;
+    background: 0;
+    border: 0;
+    padding: .6rem 0;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &.active {
+        display: none;
+    }
+
+    @media (max-width: 991px) {
+        display: block;
+    }
+}
+
+.burger__item {
+    width: 3rem;
+    height: .5rem;
+    background-color: $black;
+    position: relative;
+
+    &::before{
+        display: block;
+        content: '';
+        width: inherit;
+        height: inherit;
+        background-color: inherit;
+        position: absolute;
+        top: .8rem;
+        left: 0;
+    }
+
+    &::after {
+        display: block;
+        content: '';
+        width: inherit;
+        height: inherit;
+        background-color: inherit;
+        position: absolute;
+        bottom: .8rem;
+        left: 0;
+    }
+}
+
+// burger menu
+
+
+
+.burgerMenu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 100%;
+    background-color: rgba($white, .99);
+    transition: all .2s linear;
+
+    & .header__search {
+        display: flex;
+        margin-bottom: .5rem;
+
+        img {
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    &.active {
+        display: block;
+    }
+
+    @media (max-width: 551px) {
+        top: 44px;
+    }
+}
+
+.burgerMenu__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    padding-right: 1.5rem;
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: end;
+
+        div.nav__link {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        img {
+            filter: brightness(0%);
+        }
+        
+        li {
+            color: $black;
+            margin: 0;
+            margin-right: 1rem;
+        }
+    }
+}
+
+// search sub nav
+
+.header__search--subNav {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    background-color: $black;
+}
+
+.header__search--subNav--item {
+    color: $white;
+    padding: .5rem 1rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $red;
+    }
+}

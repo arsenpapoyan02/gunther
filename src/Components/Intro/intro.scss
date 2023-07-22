@@ -1,0 +1,156 @@
+@import '../../vars.scss';
+
+.intro {
+    // background-color: $black;
+    // background: url('./bathroom1.png') no-repeat center / cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro__inner {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro__slider {
+    overflow: hidden;
+}
+
+.intro__slider--images {
+    min-width: 100vw;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+        min-width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: all .5s linear;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}
+
+.intro__slider--slides {
+    width: 100%;
+    display: flex;
+    position: relative;
+    transition: all .2s linear;
+
+    @media (max-width: 551px) {
+        margin-top: 3rem;
+    }
+}
+
+.intro__item {
+    min-width: 100%;
+    height: 100%;
+
+    &:last-child {
+        h2 {
+            color: $black;
+        }
+    }
+
+    @media (max-width: 551px) {
+        flex-direction: column;
+    }
+}
+
+.intro__item--title {
+    width: 50%;
+    font-size: 6rem;
+    color: $white;
+    font-weight: 700;
+    line-height: 1.3;
+    z-index: 3;
+
+
+    @media (max-width: 991px) {
+        width: 60%;
+        font-size: 4rem;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 5rem;
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 551px) {
+        width: 100%;
+        font-size: 3.6rem;
+    }
+
+    @media (max-width: 350px) {
+        font-size: 3rem;
+    }
+}
+
+.intro__item--img {
+    width: 45rem;
+    height: auto;
+
+    @media (max-width: 991px) {
+        width: 35rem;
+        height: auto;
+    }
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+
+    @media (max-width: 551px) {
+        display: block;
+        width: 20rem;
+    }
+}
+
+.intro__slider--buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 5rem;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    @media (max-width: 551px) {
+        bottom: 3rem;
+    }
+}
+
+.intro__buttons--item {
+    width: 2.5rem;
+    height: 1.2rem;
+    background-color: $white;
+    border-radius: .4rem;
+    margin-left: .5rem;
+    cursor: pointer;
+    transition: all .2s linear;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:not(.active):hover {
+        background-color: #c37171;
+    }
+
+    &.active {
+        background-color: $red;
+    }
+}
+

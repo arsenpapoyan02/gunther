@@ -1,0 +1,53 @@
+.about {
+    padding-bottom: 3rem;
+
+    @media (max-width: 551px) {
+        padding-bottom: 1rem;
+    }
+}
+
+.about__inner--image {
+
+
+    & img {
+        width: 50%;
+        height: auto;
+        float: left;
+        padding-right: 1rem;
+    }
+    p {
+        width: 100%;
+        font-size: 1.8rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+
+        &:first-child {
+            font-weight: 700;
+        }
+    }
+
+    @media (max-width: 991px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding-right: 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+        p {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 551px) {
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
