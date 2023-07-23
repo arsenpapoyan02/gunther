@@ -1,0 +1,41 @@
+@import '../../vars.scss';
+
+.cookies {
+    width: 35rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background-color: $black;
+    color: $white;
+    z-index: 1001;
+    text-align: center;
+    border-bottom: 1px solid rgba($black, .2);
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    transition: right .5s linear;
+
+    img {
+        margin-left: .3rem;
+        cursor: pointer;
+    }
+
+    &.disable {
+        right: -100%;
+    }
+
+    @media (max-width: 1200px) {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    @media (max-width: 991px) {
+        padding: .5rem 1rem;
+    }
+
+    @media (max-width: 551px) {
+        width: 25rem;
+        font-size: .8rem;
+    }
+}

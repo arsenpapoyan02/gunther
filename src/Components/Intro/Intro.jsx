@@ -3,6 +3,7 @@ import './intro.scss';
 import bathroom1 from './bathroom1.png';
 import bathroom2 from './bathroom2.png';
 import bathroom3 from './bathroom3.png';
+import CookiesContainer from '../Cookies/CookiesContainer';
 
 class Intro extends React.Component {
 
@@ -47,7 +48,13 @@ class Intro extends React.Component {
 
         if(this.props.firstSlideBool) {
             canChangeSlideByTime();
-            this.props.firstSlide();
+            this.props.firstSlide(false);
+        }
+        
+        if(!this.props.firstSlideBool && this.props.canSlide) {
+            canChangeSlideByTime();
+            this.props.firstSlide(false);
+            console.clear();
         }
 
         return (
@@ -77,6 +84,7 @@ class Intro extends React.Component {
                                 <div className={`intro__buttons--item`} id="3 button3" onClick={(e) => changeSlide(e)}></div>
                             </div>
                         </div>
+                        <CookiesContainer />
                     </div>
                 </div>
             </div>

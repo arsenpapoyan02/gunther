@@ -2,6 +2,7 @@ const CHANGE_SLIDER_BUTTON = 'CHANGE-SLIDER-BUTTON';
 const CHANGE_SLIDES_STYLE = 'CHANGE-SLIDES-STYLE';
 const SLIDE_BY_TIME = 'SLIDE-BY-TIME';
 const FIRST_SLIDE = 'FIRST-SLIDE';
+const CLOSE_COOKIES = 'CLOSE-COOKIES'; 
 
 const initialState = {
     currentButton: 1,
@@ -13,7 +14,8 @@ const initialState = {
         right: '0'
     },
     canSlide: true,
-    firstSlideBool: true
+    firstSlideBool: true,
+    cookies: true
 }   
 
 const sliderReducer = (state = initialState, action) => {
@@ -36,7 +38,7 @@ const sliderReducer = (state = initialState, action) => {
         case FIRST_SLIDE: 
             return {
                 ...state,
-                firstSlideBool: false
+                firstSlideBool: action.bool
             }
         default:
             return state;
@@ -46,6 +48,6 @@ const sliderReducer = (state = initialState, action) => {
 export const changeSliderButton = (button) => ({type: CHANGE_SLIDER_BUTTON, button});
 export const changeSlidesStyle = (percent) => ({type: CHANGE_SLIDES_STYLE, percent});
 export const checkIsCanSlideByTime = (bool) => ({type: SLIDE_BY_TIME, bool});
-export const firstSlide = () => ({type: FIRST_SLIDE});
+export const firstSlide = (bool) => ({type: FIRST_SLIDE, bool});
 
 export default sliderReducer;
