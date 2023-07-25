@@ -4,13 +4,14 @@ import bathroom1 from './bathroom1.png';
 import bathroom2 from './bathroom2.png';
 import bathroom3 from './bathroom3.png';
 import CookiesContainer from '../Cookies/CookiesContainer';
+import NotificationContainer from "../Notification/NotificationContainer";
 
 class Intro extends React.Component {
 
     render() {
         const changeSlide = async (e) => {
             const buttons = document.querySelectorAll('.intro__buttons--item');
-            const buttonId = e !== null ? parseInt(e.target != undefined ? e.target.id : e.id) : null;
+            const buttonId = e !== null ? parseInt(e.target !== undefined ? e.target.id : e.id) : null;
             for(const i of buttons) {
                 i.classList.remove('active');
             }
@@ -85,6 +86,7 @@ class Intro extends React.Component {
                             </div>
                         </div>
                         <CookiesContainer />
+                        <NotificationContainer />
                     </div>
                 </div>
             </div>

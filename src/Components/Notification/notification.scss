@@ -1,18 +1,15 @@
 @import '../../vars.scss';
 
-.cookies {
+.notification {
     width: 35rem;
     position: fixed;
     bottom: 3rem;
-    right: 3rem;
-    background-color: $black;
+    right: -35rem;
+    background-color: $red;
     color: $white;
     z-index: 1001;
     text-align: center;
     padding: 1rem;
-
-    display: flex;
-    align-items: center;
     transition: right .5s linear;
 
     img {
@@ -20,13 +17,17 @@
         cursor: pointer;
     }
 
-    &.disable {
-        right: -35rem;
+    &.showed {
+        right: 3rem;
     }
 
     @media (max-width: 1200px) {
         bottom: 1rem;
-        right: 1rem;
+
+        &.showed {
+            bottom: 1rem;
+            right: 1rem;
+        }
     }
 
     @media (max-width: 991px) {
@@ -37,4 +38,10 @@
         width: 25rem;
         font-size: .8rem;
     }
+}
+
+.notification__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

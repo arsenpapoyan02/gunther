@@ -5,12 +5,20 @@ import { Link } from "react-router-dom";
 class Categories extends React.Component {
     render() {
 
-        const defaultCurrentPage = () => {
-            this.props.defaultCurrentPage();
-            this.props.switchHeaderStyle(false);
-            this.props.showBurgerMenu(false);
-            document.body.classList = '';
-            localStorage.setItem('currentPage', 1);
+        const defaultCurrentPage = (e) => {
+            const block = e.target.id !== '' ? true : null;
+            if(block) {
+                e.preventDefault();
+                const notificationText = this.props.notificationText;
+                this.props.switchNotification(true, notificationText);
+            }
+            else {
+                this.props.defaultCurrentPage();
+                this.props.switchHeaderStyle(false);
+                this.props.showBurgerMenu(false);
+                document.body.classList = '';
+                localStorage.setItem('currentPage', 1);
+            }
         }
 
         return (
@@ -44,7 +52,7 @@ class Categories extends React.Component {
                                     <h3 className="categories__grid--item--title">Duschen</h3>
                                 </div>
                             </Link>
-                            <Link to="/categories/waschbecken" className="categories__grid--item item6" onClick={defaultCurrentPage}>
+                            <Link to='/categories/waschbecken' id="notFound" className="categories__grid--item item6" onClick={defaultCurrentPage}>
                                 <div>
                                     <h3 className="categories__grid--item--title">Waschbecken</h3>
                                 </div>
